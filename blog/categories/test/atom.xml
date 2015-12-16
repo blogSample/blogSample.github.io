@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Test | My Octopress Blog]]></title>
+  <link href="http://blogsample.github.io/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://blogsample.github.io/"/>
+  <updated>2015-12-16T10:03:23+08:00</updated>
+  <id>http://blogsample.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sample]]></title>
+    <link href="http://blogsample.github.io/blog/2015/12/16/sample/"/>
+    <updated>2015-12-16T09:23:01+08:00</updated>
+    <id>http://blogsample.github.io/blog/2015/12/16/sample</id>
+    <content type="html"><![CDATA[<h3>my test</h3>
+
+<ul>
+<li>sample 1</li>
+<li>sample 2
+
+<ul>
+<li>smaple sub</li>
+</ul>
+</li>
+<li>sample 3</li>
+</ul>
+
+
+<h3>link</h3>
+
+<p><a href="www.myloverqian.com">my blog</a></p>
+]]></content>
+  </entry>
+  
+</feed>
