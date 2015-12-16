@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Sample"
+date: 2015-12-16 09:23:01 +0800
+comments: true
+categories: [html,test]
+---
+
+###my test
+
+ - sample 1
+ - sample 2
+ 	- smaple sub
+ - sample 3
+
+### link
+
+[my blog](www.myloverqian.com)	 
