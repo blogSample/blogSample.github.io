@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java源码 | Blog Sample]]></title>
   <link href="http://blogsample.github.io/blog/categories/javayuan-ma/atom.xml" rel="self"/>
   <link href="http://blogsample.github.io/"/>
-  <updated>2015-12-17T15:15:06+08:00</updated>
+  <updated>2015-12-17T15:16:40+08:00</updated>
   <id>http://blogsample.github.io/</id>
   <author>
     <name><![CDATA[zhiwei]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blogsample.github.io/blog/2015/12/17/iterator/"/>
     <updated>2015-12-17T15:12:39+08:00</updated>
     <id>http://blogsample.github.io/blog/2015/12/17/iterator</id>
-    <content type="html"><![CDATA[<pre><code class="java">/*
+    <content type="html"><![CDATA[<pre><code>/*
  * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  *

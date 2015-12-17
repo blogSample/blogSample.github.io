@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Blog Sample]]></title>
+  <link href="http://blogsample.github.io/atom.xml" rel="self"/>
+  <link href="http://blogsample.github.io/"/>
+  <updated>2015-12-17T15:16:40+08:00</updated>
+  <id>http://blogsample.github.io/</id>
+  <author>
+    <name><![CDATA[zhiwei]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Iterator]]></title>
+    <link href="http://blogsample.github.io/blog/2015/12/17/iterator/"/>
+    <updated>2015-12-17T15:12:39+08:00</updated>
+    <id>http://blogsample.github.io/blog/2015/12/17/iterator</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/*
+</span><span class='line'> * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
+</span><span class='line'> * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> *
+</span><span class='line'> */
+</span><span class='line'>
+</span><span class='line'>package java.util;
+</span><span class='line'>
+</span><span class='line'>/**
+</span><span class='line'> * An iterator over a collection.  {@code Iterator} takes the place of
+</span><span class='line'> * {@link Enumeration} in the Java Collections Framework.  Iterators
+</span><span class='line'> * differ from enumerations in two ways:
+</span><span class='line'> *
+</span><span class='line'> * &lt;ul&gt;
+</span><span class='line'> *      &lt;li&gt; Iterators allow the caller to remove elements from the
+</span><span class='line'> *           underlying collection during the iteration with well-defined
+</span><span class='line'> *           semantics.
+</span><span class='line'> *      &lt;li&gt; Method names have been improved.
+</span><span class='line'> * &lt;/ul&gt;
+</span><span class='line'> *
+</span><span class='line'> * &lt;p&gt;This interface is a member of the
+</span><span class='line'> * &lt;a href="{@docRoot}/../technotes/guides/collections/index.html"&gt;
+</span><span class='line'> * Java Collections Framework&lt;/a&gt;.
+</span><span class='line'> *
+</span><span class='line'> * @param &lt;E&gt; the type of elements returned by this iterator
+</span><span class='line'> *
+</span><span class='line'> * @author  Josh Bloch
+</span><span class='line'> * @see Collection
+</span><span class='line'> * @see ListIterator
+</span><span class='line'> * @see Iterable
+</span><span class='line'> * @since 1.2
+</span><span class='line'> */
+</span><span class='line'>public interface Iterator&lt;E&gt; {
+</span><span class='line'>    /**
+</span><span class='line'>     * Returns {@code true} if the iteration has more elements.
+</span><span class='line'>     * (In other words, returns {@code true} if {@link #next} would
+</span><span class='line'>     * return an element rather than throwing an exception.)
+</span><span class='line'>     *
+</span><span class='line'>     * @return {@code true} if the iteration has more elements
+</span><span class='line'>     */
+</span><span class='line'>    boolean hasNext();
+</span><span class='line'>
+</span><span class='line'>    /**
+</span><span class='line'>     * Returns the next element in the iteration.
+</span><span class='line'>     *
+</span><span class='line'>     * @return the next element in the iteration
+</span><span class='line'>     * @throws NoSuchElementException if the iteration has no more elements
+</span><span class='line'>     */
+</span><span class='line'>    E next();
+</span><span class='line'>
+</span><span class='line'>    /**
+</span><span class='line'>     * Removes from the underlying collection the last element returned
+</span><span class='line'>     * by this iterator (optional operation).  This method can be called
+</span><span class='line'>     * only once per call to {@link #next}.  The behavior of an iterator
+</span><span class='line'>     * is unspecified if the underlying collection is modified while the
+</span><span class='line'>     * iteration is in progress in any way other than by calling this
+</span><span class='line'>     * method.
+</span><span class='line'>     *
+</span><span class='line'>     * @throws UnsupportedOperationException if the {@code remove}
+</span><span class='line'>     *         operation is not supported by this iterator
+</span><span class='line'>     *
+</span><span class='line'>     * @throws IllegalStateException if the {@code next} method has not
+</span><span class='line'>     *         yet been called, or the {@code remove} method has already
+</span><span class='line'>     *         been called after the last call to the {@code next}
+</span><span class='line'>     *         method
+</span><span class='line'>     */
+</span><span class='line'>    void remove();
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[java基础知识]]></title>
+    <link href="http://blogsample.github.io/blog/2015/12/17/java/"/>
+    <updated>2015-12-17T10:16:28+08:00</updated>
+    <id>http://blogsample.github.io/blog/2015/12/17/java</id>
+    <content type="html"><![CDATA[<h3>java基础知识</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sample]]></title>
+    <link href="http://blogsample.github.io/blog/2015/12/16/sample/"/>
+    <updated>2015-12-16T09:23:01+08:00</updated>
+    <id>http://blogsample.github.io/blog/2015/12/16/sample</id>
+    <content type="html"><![CDATA[<h3>my test</h3>
+
+<ul>
+<li>sample 1</li>
+<li>sample 2
+
+<ul>
+<li>smaple sub</li>
+</ul>
+</li>
+<li>sample 3</li>
+</ul>
+
+
+<h3>link</h3>
+
+<p><a href="www.myloverqian.com">my blog</a></p>
+]]></content>
+  </entry>
+  
+</feed>
