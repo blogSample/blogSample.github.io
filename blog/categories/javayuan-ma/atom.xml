@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java源码 | Blog Sample]]></title>
+  <link href="http://blogsample.github.io/blog/categories/javayuan-ma/atom.xml" rel="self"/>
+  <link href="http://blogsample.github.io/"/>
+  <updated>2015-12-17T15:15:06+08:00</updated>
+  <id>http://blogsample.github.io/</id>
+  <author>
+    <name><![CDATA[zhiwei]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Iterator]]></title>
+    <link href="http://blogsample.github.io/blog/2015/12/17/iterator/"/>
+    <updated>2015-12-17T15:12:39+08:00</updated>
+    <id>http://blogsample.github.io/blog/2015/12/17/iterator</id>
+    <content type="html"><![CDATA[<pre><code class="java">/*
+ * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
+ * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+package java.util;
+
+/**
+ * An iterator over a collection.  {@code Iterator} takes the place of
+ * {@link Enumeration} in the Java Collections Framework.  Iterators
+ * differ from enumerations in two ways:
+ *
+ * &lt;ul&gt;
+ *      &lt;li&gt; Iterators allow the caller to remove elements from the
+ *           underlying collection during the iteration with well-defined
+ *           semantics.
+ *      &lt;li&gt; Method names have been improved.
+ * &lt;/ul&gt;
+ *
+ * &lt;p&gt;This interface is a member of the
+ * &lt;a href="{@docRoot}/../technotes/guides/collections/index.html"&gt;
+ * Java Collections Framework&lt;/a&gt;.
+ *
+ * @param &lt;E&gt; the type of elements returned by this iterator
+ *
+ * @author  Josh Bloch
+ * @see Collection
+ * @see ListIterator
+ * @see Iterable
+ * @since 1.2
+ */
+public interface Iterator&lt;E&gt; {
+    /**
+     * Returns {@code true} if the iteration has more elements.
+     * (In other words, returns {@code true} if {@link #next} would
+     * return an element rather than throwing an exception.)
+     *
+     * @return {@code true} if the iteration has more elements
+     */
+    boolean hasNext();
+
+    /**
+     * Returns the next element in the iteration.
+     *
+     * @return the next element in the iteration
+     * @throws NoSuchElementException if the iteration has no more elements
+     */
+    E next();
+
+    /**
+     * Removes from the underlying collection the last element returned
+     * by this iterator (optional operation).  This method can be called
+     * only once per call to {@link #next}.  The behavior of an iterator
+     * is unspecified if the underlying collection is modified while the
+     * iteration is in progress in any way other than by calling this
+     * method.
+     *
+     * @throws UnsupportedOperationException if the {@code remove}
+     *         operation is not supported by this iterator
+     *
+     * @throws IllegalStateException if the {@code next} method has not
+     *         yet been called, or the {@code remove} method has already
+     *         been called after the last call to the {@code next}
+     *         method
+     */
+    void remove();
+}
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

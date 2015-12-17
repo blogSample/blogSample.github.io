@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://blogsample.github.io/sitemap.xml 

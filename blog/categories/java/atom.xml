@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java | Blog Sample]]></title>
+  <link href="http://blogsample.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://blogsample.github.io/"/>
+  <updated>2015-12-17T15:15:06+08:00</updated>
+  <id>http://blogsample.github.io/</id>
+  <author>
+    <name><![CDATA[zhiwei]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[java基础知识]]></title>
+    <link href="http://blogsample.github.io/blog/2015/12/17/java/"/>
+    <updated>2015-12-17T10:16:28+08:00</updated>
+    <id>http://blogsample.github.io/blog/2015/12/17/java</id>
+    <content type="html"><![CDATA[<h3>java基础知识</h3>
+]]></content>
+  </entry>
+  
+</feed>
